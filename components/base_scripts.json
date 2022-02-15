@@ -1,0 +1,167 @@
+[{
+        "id": 1,
+        "name": "Network Change",
+        "hint": "Change the network mode to 4G, 3G, 2G or auto",
+        "required_params": [{
+                "type": "enum",
+                "name": "select_preferred_rat",
+                "options": [
+                    "LTE only",
+                    "3G only",
+                    "2G only",
+                    "Automatic (5G/L/W/G)"
+                ]
+            },
+            {
+                "type": "enum",
+                "name": "select_sim",
+                "options": [
+                    "SIM1",
+                    "SIM2"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Calling Test",
+        "hint": "Perform MO(outgoing call) and MT(incoming call) test",
+        "required_params": [{
+                "type": "number",
+                "name": "enter_iteration"
+            },
+            {
+                "type": "number",
+                "name": "enter_MO_PhoneNumber"
+            },
+            {
+                "type": "number",
+                "name": "enter_MT_PhoneNumber"
+            },
+            {
+                "type": "enum",
+                "name": "select_sim",
+                "options": [
+                    "SIM1",
+                    "SIM2"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "SMS Test",
+        "hint": "Perform MO(outgoing SMS) and MT(incoming SMS) test",
+        "required_params": [{
+                "type": "number",
+                "name": "enter_iteration"
+            },
+            {
+                "type": "number",
+                "name": "enter_MO_PhoneNumber"
+            },
+            {
+                "type": "number",
+                "name": "enter_MT_PhoneNumber"
+            },
+            {
+                "type": "text",
+                "name": "SMS_message_text"
+            },
+            {
+                "type": "enum",
+                "name": "select_sim",
+                "options": [
+                    "SIM1",
+                    "SIM2"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "DATA Test",
+        "hint": "Perform Data connectivity test",
+        "required_params": [{
+                "type": "number",
+                "name": "enter_iteration"
+            },
+            {
+                "type": "text",
+                "name": "enter_url"
+            },
+            {
+                "type": "number",
+                "name": "connectivity_duration_in_sec"
+            },
+            {
+                "type": "enum",
+                "name": "select_sim",
+                "options": [
+                    "SIM1",
+                    "SIM2"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Preferred Call Subscription",
+        "hint": "Sets preferred call subscription",
+        "required_params": [{
+            "type": "enum",
+            "name": "select_preferred_CALL_option",
+            "options": [
+                "SIM1",
+                "SIM2"
+            ]
+        }]
+    },
+    {
+        "id": 6,
+        "name": "Preferred SMS Subscription",
+        "hint": "Sets preferred SMS subscription",
+        "required_params": [{
+            "type": "enum",
+            "name": "select_preferred_SMS_option",
+            "options": [
+                "SIM1",
+                "SIM2"
+            ]
+        }]
+    },
+    {
+        "id": 7,
+        "name": "Preferred DATA Subscription",
+        "hint": "Sets preferred DATA subscription",
+        "required_params": [{
+            "type": "enum",
+            "name": "select_preferred_DATA_option",
+            "options": [
+                "SIM1",
+                "SIM2"
+            ]
+        }]
+    },
+    {
+        "id": 8,
+        "name": "Start RxLogger",
+        "hint": "Starts the RXLogging option",
+        "required_params": []
+    },
+    {
+        "id": 9,
+        "name": "Stop RxLogger",
+        "hint": "Stops the RXLogging option",
+        "required_params": []
+    },
+    {
+        "id": 10,
+        "name": "Add Delay",
+        "hint": "Adds delay in the execution, configure in seconds",
+        "required_params": [{
+            "type": "number",
+            "name": "delay_time_in_sec"
+        }]
+    }
+]
