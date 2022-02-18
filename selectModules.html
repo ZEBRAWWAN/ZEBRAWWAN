@@ -29,7 +29,39 @@
     <meta property="og:type" content="website">
 </head>
 
-<body class="u-body u-xl-mode">
+<body class="u-body u-xl-mode" onload="javascript:addCode()">
+<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
+		import { getFirestore, collection, getDocs } from '/node_modules/firebase/firestore/lite';
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+
+
+
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+		apiKey: "AIzaSyDA9vKVCyC8fKZNDl2F-ivbmRegczZSYHA",
+		authDomain: "wwanautomation2.firebaseapp.com",
+		projectId: "wwanautomation2",
+		storageBucket: "wwanautomation2.appspot.com",
+		messagingSenderId: "904325471303",
+		appId: "1:904325471303:web:2f26a976fefc55448f2562",
+		measurementId: "G-EDJJX4ST1G"
+		};
+
+
+
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		const db = getFirestore(app);
+		db.ref("student/1").set({example: 1234});
+</script>
+
+
     <header class="u-black u-clearfix u-header u-header" id="sec-6a5c">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="900" data-image-height="900">
             <img src="images/397698.jpg" class="u-logo-image u-logo-image-1">
@@ -42,6 +74,7 @@
 </g></svg>
                 </a>
             </div>
+			
             <div class="u-custom-menu u-nav-container">
                 <ul class="u-nav u-unstyled">
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html" style="padding: 10px 40px;">Home</a>
@@ -100,12 +133,23 @@
             <p class="u-text u-text-2"> &nbsp; &nbsp; &nbsp;<span style="font-weight: 700;"></span>&nbsp;<span class="u-icon u-icon-2"><svg class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" style="width: 1em; height: 1em;"><path style="fill:currentColor;" d="M37.059,16H26V4.941C26,2.224,23.718,0,21,0s-5,2.224-5,4.941V16H4.941C2.224,16,0,18.282,0,21
 	s2.224,5,4.941,5H16v11.059C16,39.776,18.282,42,21,42s5-2.224,5-4.941V26h11.059C39.776,26,42,23.718,42,21S39.776,16,37.059,16z"></path></svg><img></span>&nbsp;SELECTED MODULES
             </p>
+	<script>
+		function addCode() {
+			var output = "";
+			var rows = 10;
+			for(i=1;i<=rows;i++) {
+				output +="<li>Sample Item "+i+"</li>"
+			}
+			document.getElementById("item_load").innerHTML = output;
+		}
+	</script>
             <div class="u-border-2 u-border-grey-75 u-container-style u-group u-white u-group-1">
                 <div class="u-container-layout u-container-layout-1"></div>
             </div>
+			
             <div class="u-border-2 u-border-grey-75 u-container-style u-group u-shape-rectangle u-white u-group-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="">
                 <div class="u-container-layout u-container-layout-2">
-                    <ul class="u-text u-text-3">
+                    <ul id="item_load" class="u-text u-text-3">
                         <li>Sample Item 1</li>
                         <li>Sample Item 2</li>
                         <li>Sample Item 3</li>
